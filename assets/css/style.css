@@ -1,1 +1,311 @@
-body{background-color: aqua;}
+/* Set body font and background */
+body {
+    background-color: aqua;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+}
+
+;
+
+/* Heading styles */
+heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media(max-width: 320px) {
+    .game-space {
+        height: 70vh;
+    }
+
+    .controls-space {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .btn--big {
+        margin: 10px 10px;
+    }
+}
+
+
+
+
+
+/* Reset some default styles */
+body,
+h1,
+p,
+input,
+button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container styles */
+.game-space {
+   display: flex; 
+    background-color: #E6ECF0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    box-sizing: border-box;
+    width: 85%;
+    height: 65vh;
+    max-height: 450px;
+    max-width: 830px;
+
+
+
+
+
+
+}
+
+/* Heading styles */
+
+
+.logo {
+    width: 30px;
+    height: 45px;
+    margin-right: 10px;
+    padding-right: 5px;
+}
+
+/* Controls space styles */
+.controls-space {
+    width: 85%;
+    gap: 5px;
+    margin: 30px auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn--big {
+    font-size: 3.3rem;
+    padding-top: 8px;
+    border-radius: 50%;
+    background-color: black;
+    border: 10px solid;
+    width: 110px;
+    height: 110px;
+    margin: 0 20px;
+    transition: all 0.5s;
+}
+.btn--big::after{
+    content: attr(data-type);
+    font-size: 1rem;
+    color: #445361;
+    position: relative;
+    left: -0,5em;
+}
+
+.btn--white {
+    background-color: #fff;
+    color: #333;
+    border-color:black;
+
+    
+}
+
+.btn--white:active,
+.btn--white:hover {
+    background-color: wheat;
+    color: white;
+}
+
+.btn--orange {
+    background-color: #ff9800;
+    color: #fff;
+}
+
+.btn--orange:active,
+.btn--orange:hover {
+    background-color: orangered;
+    color: white;
+}
+.btn--green {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.btn--green:active,
+.btn--green:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+.btn--blue {
+    background-color: #2196f3;
+    color: #fff;
+}
+.btn--blue:active,
+.btn--blue:hover {
+    background-color: darkblue;
+    color: white;
+}
+/* Questions space styles */
+.qustions-space {
+   
+    align-items: center;
+    font-size: 2rem;
+    margin:auto;
+    width: 50%;
+    padding: 48px 0;
+}
+
+.question-space span {
+    padding: 0 15px;
+}
+
+#operator {
+    margin: 0 10px;
+}
+
+.answer-message {
+    margin: 0 10px;
+    font-size: 1rem;
+    display: none;
+}
+
+#answer_box {
+    padding: 8px;
+    border: none;
+    color: #445361;
+    display: inline-block;
+    height: 40px;
+    width: 80px;
+    font-size: 1.2rem;
+}
+
+/* Submit button styles */
+.btn--red {
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Score space styles */
+.score-space {
+  
+    margin: 5px auto;
+    width: 60%;
+    font-size: 1.2rem;
+}
+
+.scores {
+
+    display: inline-block;
+    padding: 25px;
+}
+
+#score {
+    color: green;
+    font-weight: bold;
+}
+#inescorrect-scores{color: red;
+    font-weight: bold;}
+/* Responsive styles  */
+@media (max-width: 600px) {
+    .controls-space {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 220px;
+        margin-bottom: 10px;
+        height: 60px;
+        font-family: "Raleway", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: white;
+    }
+}
+
+btn--big {
+    margin: 0 10px;
+    padding: 5px;
+    border: 5px solid;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+}
+
+.btn--big::after {
+    font-size: 0.6rem;
+    left: -0.7rem;
+}
+
+.question-area {
+    padding: 10% 0;
+    width: 100%;
+}
+
+.question-area span {
+    padding: 0;
+}
+
+.answer-message {
+    display: block;
+}
+
+#answer-box {
+    display: block;
+    margin: 0 auto;
+}
+
+.btn--gray {
+    margin-top: 0;
+}
+
+.score-area {
+    width: 100%;
+}
+
+.scores {
+    margin: 0.5em auto;
+    display: block;
+    padding: 5px;
+}
+
+.heading {
+    font-size: 2rem;
+}
+
+
+@media (max-width: 320px) {
+    .game-area {
+        height: 70vh;
+    }
+
+    .controls-area {
+        width: 75%;
+        margin: 10px auto;
+    }
+
+    .btn--big {
+        margin: 10px 10px;
+    }
+
+    .question-area {
+        padding: 10px 0;
+    }
+
+}
