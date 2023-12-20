@@ -3,15 +3,42 @@ body {
     background-color: aqua;
     font-family: "Raleway", sans-serif;
     text-align: center;
+    color: black;
+
+
 }
+
 
 ;
 
 /* Heading styles */
 heading {
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.logo {
+    width: 50px;
+    height: 45px;
+    margin-right: 10px;
+    padding-right: 5px;
+}
+
+.game-space {
+    display: flex;
+    background-color: #E6ECF0;
+    box-sizing: border-box;
+    flex-direction: row
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    width: 85%;
+    height: 65vh;
+    max-height: 500px;
+    max-width: 850px;
 }
 
 @media(max-width: 320px) {
@@ -44,38 +71,7 @@ button {
     box-sizing: border-box;
 }
 
-/* Container styles */
-.game-space {
-   display: flex; 
-    background-color: #E6ECF0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1%;
-    box-sizing: border-box;
-    width: 85%;
-    height: 65vh;
-    max-height: 450px;
-    max-width: 830px;
 
-
-
-
-
-
-}
-
-/* Heading styles */
-
-
-.logo {
-    width: 30px;
-    height: 45px;
-    margin-right: 10px;
-    padding-right: 5px;
-}
 
 /* Controls space styles */
 .controls-space {
@@ -104,20 +100,21 @@ button {
     margin: 0 20px;
     transition: all 0.5s;
 }
-.btn--big::after{
+
+.btn--big::after {
     content: attr(data-type);
     font-size: 1rem;
     color: #445361;
     position: relative;
-    left: -0,5em;
+    left: -0, 5em;
 }
 
 .btn--white {
     background-color: #fff;
     color: #333;
-    border-color:black;
+    border-color: black;
 
-    
+
 }
 
 .btn--white:active,
@@ -136,6 +133,7 @@ button {
     background-color: orangered;
     color: white;
 }
+
 .btn--green {
     background-color: #4caf50;
     color: #fff;
@@ -151,17 +149,19 @@ button {
     background-color: #2196f3;
     color: #fff;
 }
+
 .btn--blue:active,
 .btn--blue:hover {
     background-color: darkblue;
     color: white;
 }
+
 /* Questions space styles */
 .qustions-space {
-   
+
     align-items: center;
     font-size: 2rem;
-    margin:auto;
+    margin: auto;
     width: 50%;
     padding: 48px 0;
 }
@@ -203,7 +203,7 @@ button {
 
 /* Score space styles */
 .score-space {
-  
+
     margin: 5px auto;
     width: 60%;
     font-size: 1.2rem;
@@ -219,8 +219,12 @@ button {
     color: green;
     font-weight: bold;
 }
-#inescorrect-scores{color: red;
-    font-weight: bold;}
+
+#inescorrect-scores {
+    color: red;
+    font-weight: bold;
+}
+
 /* Responsive styles  */
 @media (max-width: 600px) {
     .controls-space {
