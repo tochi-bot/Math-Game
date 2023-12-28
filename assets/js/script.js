@@ -1,44 +1,44 @@
 /* Ensure that the game is executed only after the DOM has completely finished loading.*/
 /*Retrieve the button elements and attach event listeners to each of them.;*/
-document.addEventListener("DOMContentLoaded", function(){
-    let button=document.getElementsByTagName("button");
-    for(let button of buttons){
-        button.addEventListener ("click", function(){
-            if (this.getAttribute("data-type")==='submit'){
+document.addEventListener("DOMContentLoaded", function () {
+    let buttons = document.getElementsByTagName("button");
+    for (let button of buttons) {
+        button.addEventListener("click", function () {
+            if (this.getAttribute("data-type") === "submit") {
                 alert("You clicked Submit");
             }
-            else{
+            else {
                 let gameType = this.getAttribute("data-type");
                 alert('You clicked ${gameType}');
             }
-        })
+        });
     }
-})
-function runningGame(){
-
+});
+function runningGame() {
+    math.floor;
 }
 
-function checkingAnswer(){
+function checkingAnswer() {
 
 }
-function calculatingCorrectAnwer(){
+function calculatingCorrectAnwer() {
 
 }
-function incrementingScore(){
+function incrementingScore() {
 
 }
-function incrementIncorrectAnswer(){
+function incrementIncorrectAnswer() {
 
 }
-function dispayingAdditionQuestion(){
+function dispayingAdditionQuestion() {
 
 }
-function dispayingSubtractQuestion(){
+function dispayingSubtractQuestion() {
 
 }
-function dispayingMultiplyQuestion(){
+function dispayingMultiplyQuestion() {
 
 }
-function displayingDivideQuestion(){
+function displayingDivideQuestion() {
 
 }
