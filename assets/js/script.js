@@ -1,53 +1,64 @@
 /* Ensure that the game is executed only after the DOM has completely finished loading.*/
 /*Retrieve the button elements and attach event listeners to each of them.;*/
+// Declare gameType outside the function
+
+let gameType; // Declare gameType outside the function
+
 document.addEventListener("DOMContentLoaded", function () {
+    // Add an event listener to handle button clicks
     let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
         button.addEventListener("click", function () {
+            // Check if the button is a submit button
             if (this.getAttribute("data-type") === "submit") {
                 alert("You clicked Submit");
-            }
-            else {
-                let gameType = this.getAttribute("data-type");
+            } else {
+                // Assign the value to gameType and call the runningGame function
+                gameType = this.getAttribute("data-type");
                 runningGame(gameType);
             }
         });
     }
 });
-/**The container game 'loop' and called when script is loaded first and 
- * after the user's answer has be loaded
- */
+
 function runningGame(gameType) {
-    //creates two randon numbers between 1 and 50
+    // Generate two random numbers between 1 and 50
     let numA = Math.floor(Math.random() * 50) + 1;
     let numB = Math.floor(Math.random() * 50) + 1;
-}
-if (gameType === "addition") {
-    dispayAdditionQuestion(numA, numB);
-}
-else {
-    alert('Unrecognized game type: ${gameType}');
-    throw "Unrecognized game type: ${gameType}. End!";
+
+    if (gameType === "addition") {
+        // Call the displayAdditionQuestion function for addition game type
+        displayAdditionQuestion(numA, numB);
+    } else {
+        // Display an alert for unrecognized game types and throw an error
+        alert(`Unrecognized game type: ${gameType}`);
+        throw `Unrecognized game type: ${gameType}. End!`;
+    }
 }
 
 function checkingAnswer() {
-
+    // Implement your checking answer logic here
 }
-function calculatingCorrectAnwer() {
 
+function calculatingCorrectAnswer() {
+    // Implement your correct answer calculation logic here
 }
+
 function incrementingScore() {
-
+    // Implement your score incrementing logic here
 }
+
 function incrementIncorrectAnswer() {
-
+    // Implement your incorrect answer incrementing logic here
 }
-function dispayingAdditionQuestion(operant1, operant2) {
-    document.getElementById(operant1).textContent = operant1;
-    document.getElementById(operant2).textContent = operant2;
-    document.getElementById(operantor).textContent = "+";
 
+function displayAdditionQuestion(operand1, operand2) {
+    // Display the operands and operator for the addition question
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").textContent = "+";
 }
+
 function dispayingSubtractQuestion() {
 
 }
