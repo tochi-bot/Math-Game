@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             // Check if the button is a submit button
             if (this.getAttribute("data-type") === "submit") {
-                alert("You clicked Submit");
+                checkingAnswer();
             } else {
                 // Assign the value to gameType and call the runningGame function
                 gameType = this.getAttribute("data-type");
@@ -32,16 +32,36 @@ function runningGame(gameType) {
     } else {
         // Display an alert for unrecognized game types and throw an error
         alert(`Unrecognized game type: ${gameType}`);
-        throw `Unrecognized game type: ${gameType}. End!`;
+        throw new Error(`Unrecognized game type: ${gameType}.End!`);
     }
 }
-
+//checks answer agaist the first element in the retrived calculatedCorrectAnswer array
 function checkingAnswer() {
-    // Implement your checking answer logic here
-}
+    let userAnswer = parseInt(document.getElementById("answer-box").value);
+    let calculatedAnswer = calculatingCorrectAnswer();
+    let isCorrect = userAnswer === calculatedAnswer[0];
+    if (isCorrect) {
+        alert("weldon! You are Correct:)");
+    } else {
+        alert(`Nooo... Your Answer is ${userAnswer} and the Correct Anwer was ${calculatedAnswer[0]}. Please try again.`);
+    }
+    if (calculatedAnswer[1]) {
+        runningGame(calculatedAnswer[1]);
+    } else { alert("Error: Game type is undefined"); }
 
+}
+//**Gets the numbers (operands) and operator (plus. minus, multiplcation and division) directly from the dom to retrieve the correct answer*/
 function calculatingCorrectAnswer() {
-    // Implement your correct answer calculation logic here
+    let operand1 = parseInt(document.getElementById("operand1").innerText);
+    let operand2 = parseInt(document.getElementById("operand2").innerText);
+    let operator = document.getElementById("operator").innerText;
+    if (operator === "+") {
+        return [operand1 + operand2, "addition"];
+    } else {
+        alert(`unrealized operator ${operator}`);
+        throw new Error(`unrealized operator ${operator}.End!`);
+    }
+
 }
 
 function incrementingScore() {

@@ -36,10 +36,11 @@ body {
 
 .question-space {
     width: 100%;
-    font-size: 20rem;
+    font-size: 24rem;
     margin: auto;
     padding: 50px 0;
     align-items: center;
+    font-weight: bold;
 }
 
 .question-space span {
@@ -51,6 +52,11 @@ body {
     margin: 5px auto;
     width: 60%;
     font-size: 1.2rem;
+}
+
+#operator {
+    font-weight: bold;
+    margin: 0 10px;
 }
 
 .controls-space {
@@ -72,15 +78,17 @@ body {
 .answer-message {
     display: none;
     font-size: 1rem;
+    margin: 10px;
 }
 
 #answer-box {
-    border: none;
     color: #445361;
     display: inline-block;
     height: 40px;
     width: 80px;
     font-size: 1.2rem;
+    border: 3px solid aqua;
+    border-radius: 5px;
 }
 
 .scores {
