@@ -29,12 +29,16 @@ function runningGame(gameType) {
     if (gameType === "addition") {
         // Call the displayAdditionQuestion function for addition game type
         displayAdditionQuestion(numA, numB);
+    } else if (gameType === "multiply") {
+        displayingMultiplyQuestion(numA, numB);
     } else {
         // Display an alert for unrecognized game types and throw an error
         alert(`Unrecognized game type: ${gameType}`);
         throw new Error(`Unrecognized game type: ${gameType}.End!`);
     }
 }
+
+
 //checks answer agaist the first element in the retrived calculatedCorrectAnswer array
 function checkingAnswer() {
     let userAnswer = parseInt(document.getElementById("answer-box").value);
@@ -43,7 +47,8 @@ function checkingAnswer() {
     if (isCorrect) {
         alert("weldon! You are Correct:)");
         incrementingScore();
-    } else {
+    }
+    else {
         alert(`Nooo... Your Answer is ${userAnswer} and the Correct Anwer was ${calculatedAnswer[0]}. Please try again.`);
         incrementIncorrectAnswer();
     }
@@ -59,7 +64,8 @@ function calculatingCorrectAnswer() {
     let operator = document.getElementById("operator").innerText;
     if (operator === "+") {
         return [operand1 + operand2, "addition"];
-    } else {
+    } else if (operator === "x") { return [operand1 * operand2, "multiply"]; }
+    else {
         alert(`unrealized operator ${operator}`);
         throw new Error(`unrealized operator ${operator}.End!`);
     }
@@ -89,9 +95,12 @@ function displayAdditionQuestion(operand1, operand2) {
 function dispayingSubtractQuestion() {
 
 }
-function dispayingMultiplyQuestion() {
-
+function displayingMultiplyQuestion(operand1, operand2) {
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").textContent = "x";
 }
-function displayingDivideQuestion() {
 
-}
+
+
+function displayingDivideQuestion() { }
